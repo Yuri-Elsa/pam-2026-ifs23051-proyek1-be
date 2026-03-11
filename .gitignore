@@ -1,0 +1,51 @@
+# ═══════════════════════════════════════════════════════════════
+#  WatchList Backend (Ktor) — .gitignore
+# ═══════════════════════════════════════════════════════════════
+
+# ── Gradle ───────────────────────────────────────────────────
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+build/
+out/
+
+# ── IntelliJ IDEA ────────────────────────────────────────────
+.idea/
+*.iml
+*.ipr
+*.iws
+.editorconfig
+
+# ── Local config (JANGAN di-commit — berisi secret & password) ─
+local.properties
+.env
+.env.*
+!.env.example
+
+# ── File upload (data runtime, bukan source code) ────────────
+uploads/
+
+# ── JAR / distribusi ─────────────────────────────────────────
+*.jar
+*.war
+*.ear
+dist/
+
+# ── Log ──────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── OS ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── Docker ───────────────────────────────────────────────────
+# (Dockerfile & docker-compose.yml tetap di-commit)
+.docker/
+
+# ── Kotlin / JVM ─────────────────────────────────────────────
+*.class
+*.kotlin_module
