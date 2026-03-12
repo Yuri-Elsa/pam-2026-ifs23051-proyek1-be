@@ -16,6 +16,16 @@ application {
     mainClass = "org.delcom.watchlist.ApplicationKt"
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 repositories {
     mavenCentral()
 }
