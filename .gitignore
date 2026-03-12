@@ -1,7 +1,3 @@
-# ═══════════════════════════════════════════════════════════════
-#  WatchList Backend (Ktor) — .gitignore
-# ═══════════════════════════════════════════════════════════════
-
 # ── Gradle ───────────────────────────────────────────────────
 .gradle/
 gradle-app.setting
@@ -17,19 +13,19 @@ out/
 *.iws
 .editorconfig
 
-# ── Local config (JANGAN di-commit — berisi secret & password) ─
+# ── Local config ─────────────────────────────────────────────
 local.properties
 .env
 .env.*
 !.env.example
 
-# ── File upload (data runtime, bukan source code) ────────────
+# ── File upload ───────────────────────────────────────────────
 uploads/
 
 # ── JAR / distribusi ─────────────────────────────────────────
-*.jar
-*.war
-*.ear
+build/libs/*.jar     # <-- lebih spesifik
+build/libs/*.war
+build/libs/*.ear
 dist/
 
 # ── Log ──────────────────────────────────────────────────────
@@ -43,7 +39,6 @@ ehthumbs.db
 Desktop.ini
 
 # ── Docker ───────────────────────────────────────────────────
-# (Dockerfile & docker-compose.yml tetap di-commit)
 .docker/
 
 # ── Kotlin / JVM ─────────────────────────────────────────────
