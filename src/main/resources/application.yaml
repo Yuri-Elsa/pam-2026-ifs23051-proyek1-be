@@ -14,7 +14,4 @@ ktor:
     password: ${DB_PASSWORD}
 
   jwt:
-    secret: "${JWT_SECRET}"
-
-  app:
-    baseUrl: ${APP_URL}
+    secret: ${JWT_SECRET}
