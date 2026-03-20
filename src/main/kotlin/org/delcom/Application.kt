@@ -15,6 +15,7 @@ import io.ktor.server.response.*
 import kotlinx.serialization.json.Json
 import org.delcom.helpers.JWTConstants
 import org.delcom.helpers.configureDatabases
+import org.delcom.helpers.getEnv
 import org.delcom.module.appModule
 import org.koin.ktor.plugin.Koin
 
@@ -24,6 +25,8 @@ fun main(args: Array<String>) {
         ignoreIfMissing = true
     }
 
+    // Set semua nilai dari .env ke System Properties
+    // agar bisa dibaca via getEnv() di seluruh aplikasi
     dotenv.entries().forEach {
         System.setProperty(it.key, it.value)
     }
@@ -33,12 +36,12 @@ fun main(args: Array<String>) {
 
 fun Application.module() {
 
-    val jwtSecret = System.getenv("JWT_SECRET")
-        ?: "change-me-in-production-use-long-random-string"
+    // Gunakan getEnv() agar bisa baca dari OS env maupun System Properties (dotenv)
+    val jwtSecret = getEnv("JWT_SECRET", "change-me-in-production-use-long-random-string")
 
-    val uploadDir = System.getenv("UPLOAD_DIR") ?: "uploads"
+    val uploadDir = getEnv("UPLOAD_DIR", "uploads")
 
-    val uploadMaxSizeMb = System.getenv("UPLOAD_MAX_SIZE_MB")?.toLongOrNull() ?: 5L
+    val uploadMaxSizeMb = getEnv("UPLOAD_MAX_SIZE_MB", "5").toLongOrNull() ?: 5L
 
     install(Authentication) {
         jwt(JWTConstants.NAME) {
