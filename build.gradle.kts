@@ -16,6 +16,10 @@ application {
     mainClass = "org.delcom.ApplicationKt"
 }
 
+kotlin {
+    jvmToolchain(21)
+}
+
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-netty")
