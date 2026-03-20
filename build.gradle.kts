@@ -13,7 +13,7 @@ group = "org.delcom"
 version = "0.0.1"
 
 application {
-    mainClass = "org.delcom.watchlist.ApplicationKt"
+    mainClass = "org.delcom.ApplicationKt"
 }
 
 kotlin {
@@ -43,7 +43,6 @@ dependencies {
     testImplementation("io.ktor:ktor-server-test-host")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
-    // Add
     implementation("io.github.cdimascio:dotenv-kotlin:${dotenv_version}")
     implementation("io.ktor:ktor-server-auth:${ktor_version}")
     implementation("io.ktor:ktor-server-auth-jwt:${ktor_version}")

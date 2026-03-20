@@ -1,7 +1,7 @@
 ktor:
   application:
     modules:
-      - org.delcom.watchlist.ApplicationKt.module
+      - org.delcom.ApplicationKt.module
   deployment:
     port: ${APP_PORT}
     host: ${APP_HOST}
